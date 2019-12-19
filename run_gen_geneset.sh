@@ -5,7 +5,7 @@ featurearray=( go  pfam panther pathway kegg_enzyme smart kog )
 for i in "${featurearray[@]}"
 do
     sleep 30
-    perl fetch_genlist_v3.pl $1 $i
+    perl fetch_genlist.pl $1 $i
     input="${1}/${1}_${i}_result.txt"
     output="${1}/${1}_${i}_geneset.txt"
     if [ ${i} == "go" ]; then
@@ -15,7 +15,7 @@ do
     fi
  
     echo "${input}"
-    perl create_genset_v2.pl "${input}" 2 > "${output}" 
+    perl create_genset.pl "${input}" 2 > "${output}" 
 done
 
 
