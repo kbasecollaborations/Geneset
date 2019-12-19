@@ -7,7 +7,7 @@ do
     sleep 30
     perl fetch_genlist.pl $1 $i
     input="${1}/${1}_${i}_result.txt"
-    output="${1}/${1}_${i}_geneset.txt"
+    output="${1}/${1}_${i}.gmt"
     if [ ${i} == "go" ]; then
        echo "${i}"
        perl add_go_smart_desc.pl go_id_desc.txt $input > "${1}/${1}_${i}_tmp.txt"
@@ -25,4 +25,4 @@ done
 
 tar -cvzf "${1}".tar.gz "${1}"
 
-
+rm -r "${1}"
