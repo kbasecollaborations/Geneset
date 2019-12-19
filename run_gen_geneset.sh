@@ -20,8 +20,9 @@ do
     
     echo "${input}"
     perl create_genset.pl "${input}" 2 > "${output}" 
+    rm $input
 done
 
-
+tar -cvzf "${1}".tar.gz "${1}"
 
 
