@@ -1,5 +1,11 @@
 # Geneset
 
+#Getting smart description file </br>
+wget http://smart.embl-heidelberg.de/smart/descriptions.pl
+
+#Extracting smart id description list. </br>
+awk -F "\t" '{print $2"\t"$3}' descriptions.pl > smart_id_desc.txt
+
 #Getting obo file from GO. </br>
 wget http://current.geneontology.org/ontology/go.obo
 
